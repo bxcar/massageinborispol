@@ -1,5 +1,5 @@
 /* Getting the new tags to behave */
-article, aside, audio, canvas, command, datalist, details, embed, figcaption, figure, footer, header, hgroup, keygen, meter, nav, output, progress, section, source, video {
+article, aside, audio, canvas, /*command,*/ datalist, details, embed, figcaption, figure, footer, header, /*hgroup,*/ keygen, meter, nav, output, progress, section, source, video {
     display: block
 }
 
@@ -74,7 +74,8 @@ p {
 }
 
 .p2 {
-    margin-bottom: 15px
+    margin-bottom: 15px;
+    font-size: 20px;
 }
 
 .p3 {
@@ -162,7 +163,7 @@ p {
 
 .img-indent {
     float: left;
-    margin: 0 20px 0px 0
+    margin: 0 20px 0 0
 }
 
 .prev-indent-bot {
@@ -235,9 +236,9 @@ header {
     color: #fff;
     background-position: left top;
     background-color: #171717;
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.20);
-    -moz-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.8);
-    -webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 9)
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.20);
+    -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.8);
+    -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 9)
 }
 
 .menu li.active, .menu li:hover {
@@ -474,7 +475,7 @@ footer {
 }
 
 .footer-text {
-    font-size: 22px;
+    font-size: 25px; /*22px*/
     line-height: 1.2em;
     font-weight: 300;
     letter-spacing: -1px;
@@ -533,6 +534,7 @@ footer {
     line-height: 1.2em;
     color: #0dc2ce;
     margin-bottom: -2px; /*-11px*/
+    /*margin-left: 5px;*/
 }
 
 .support-phone b {
@@ -566,4 +568,36 @@ footer {
 
 .list-services li a.item-4 {
     background-position: -75px 0
+}
+
+#map {
+    margin: 5px;
+    width: 300px;
+    height: 222px;
+    border: 1px solid black;
+}
+
+
+#contactaside {
+    height: 150px;
+    background-image: url("../images/bg180.png");
+}
+
+#slogan-text-top {
+    display: inline-block;
+    margin-top: 30px;
+    margin-left: 30px;
+    font-size: 30px;
+    font-family: arial, sans-serif;
+    font-style: italic ;
+    color: #0098be;
+}
+#slogan-text-bottom {
+    display: inline-block;
+    margin-top: 70px;
+    margin-left: 60%;
+    font-size: 30px;
+    font-family: arial, sans-serif;
+    font-style: italic ;
+    color: #0098be;
 }
