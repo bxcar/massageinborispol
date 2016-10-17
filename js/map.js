@@ -12,7 +12,7 @@ var ourCoords = {
 };
 
 window.onload = getMyLocation;
-var options = {enableHighAccuracy: true, timeout: 100, maximumAge: 0};
+// var options = {enableHighAccuracy: true, timeout: 100, maximumAge: 0};
 
 /*function watchLocation() {
     watchId = navigator.geolocation.watchPosition(displayLocation, displayError);
@@ -27,7 +27,7 @@ var options = {enableHighAccuracy: true, timeout: 100, maximumAge: 0};
 
 function getMyLocation() {
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(displayLocation, displayError, options);
+        navigator.geolocation.getCurrentPosition(displayLocation, displayError); /*displayError, options*/
         /*var watchButton = document.getElementById("watch");
          watchButton.onclick = watchLocation;
          var clearWatchButton = document.getElementById("clearWatch");
@@ -86,9 +86,9 @@ function displayError(error) {
     };
 
     // var errorMessage = errorTypes[error.code];
-    if (error.code == 0 || error.code == 2) {
+    // if (error.code == 0 || error.code == 2) {
         // errorMessage = errorMessage + " " + error.message;
-    }
+    // }
 
     // var div = document.getElementById("location");
     // div.innerHTML = errorMessage;
@@ -132,8 +132,9 @@ function showMap(coords) {
     var mapDiv = document.getElementById("map");
     map = new google.maps.Map(mapDiv, mapOptions);
 
-    var title = "Your location";
-    var content = "You are here " + coords.latitude + ", " + coords.longitude;
+    var title = "Мы находимся здесь";
+    // var content = "You are here " + coords.latitude + ", " + coords.longitude;
+    var content = "Мы находимся здесь";
     addMarker(map, googleLatAndLong, title, content);
 }
 
