@@ -134,7 +134,7 @@ function showMap(coords) {
 
     var title = "Мы находимся здесь";
     // var content = "You are here " + coords.latitude + ", " + coords.longitude;
-    var content = "Мы находимся здесь";
+    var content = "ул. Киевский шлях, 1/27 кв.3";
     addMarker(map, googleLatAndLong, title, content);
 }
 
