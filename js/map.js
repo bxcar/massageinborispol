@@ -124,7 +124,7 @@ function showMap(coords) {
     var googleLatAndLong = new google.maps.LatLng(coords.latitude, coords.longitude);
 
     var mapOptions = {
-        zoom: 16,
+        zoom: 15,
         center: googleLatAndLong,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
@@ -132,7 +132,7 @@ function showMap(coords) {
     var mapDiv = document.getElementById("map");
     map = new google.maps.Map(mapDiv, mapOptions);
 
-    var title = "Мы находимся здесь";
+    var title = "ул. Киевский шлях, 1/27 кв.3";
     // var content = "You are here " + coords.latitude + ", " + coords.longitude;
     var content = "ул. Киевский шлях, 1/27 кв.3";
     addMarker(map, googleLatAndLong, title, content);
@@ -143,7 +143,7 @@ function addMarker(map, latlong, title, content) {
         position: latlong,
         map: map,
         title: title,
-        clickable: true
+        clickable: true,
     };
 
     var marker = new google.maps.Marker(markerOptions);
