@@ -86,7 +86,7 @@
                                                onClick="document.getElementById('contact-form').reset()">Clear form</a>-->
                                             <!--<a class="button" href="#"-->
                                                <!--onClick="document.getElementById('contact-form').submit()">Отправить</a>-->
-                                            <input type="submit" value="Отправить">
+                                            <input id="submitform" type="submit" value="Отправить">
                                         </div>
                                     </div>
                                 </div>
@@ -103,6 +103,10 @@
                         </form>-->
                         <script>
                             document.getElementById('contact-form').addEventListener('submit', function(evt){
+                                var loading = document.getElementById("submitform");
+                                loading.setAttribute("value", "");
+                                loading.setAttribute("style",
+                                        "background: url(images/post_preloader.gif) 55px 0px no-repeat #09b4c2  !important;");
                                 var http = new XMLHttpRequest(), f = this;
                                 evt.preventDefault();
                                 http.open("POST", "contacts.php", true);
@@ -115,8 +119,11 @@
                                         f.messageFF.value='';
                                     }*/
                                     if (http.readyState == 4 && http.status == 200) {
+                                        loading.setAttribute("value", "Отправить");
+                                        loading.setAttribute("style",
+                                                "background: url(images/button-tail.gif) 0 0 repeat-x #09b4c2  !important;");
                                         alert('Ваше сообщение успешно отправлено. В ближайшее время мы свяжемся с вами.' +
-                                                '\nТакже вы можете связаться с нами позвонив по одному из указанных телефонов:)');
+                                                '\nТакже вы можете связаться с нами позвонив по одному из указанных телефонов.');
                                         f.messageFF.removeAttribute('value'); // очистить поле сообщения (две строки)
                                         f.messageFF.value='';
                                     }

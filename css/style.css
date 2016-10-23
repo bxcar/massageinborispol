@@ -347,6 +347,7 @@ input[type=submit] {
     padding: 4px 13px 6px !important;
     color: #fff !important;
     background: url(../images/button-tail.gif) 0 0 repeat-x #09b4c2  !important;
+    /*background: url(../images/post_preloader.gif) 55px 0px no-repeat #09b4c2  !important;*/
     border-radius: 7px  !important;
     -moz-border-radius: 7px  !important;
     -webkit-border-radius: 7px  !important
