@@ -72,25 +72,60 @@
                         <form id="contact-form" method="post" enctype="multipart/form-data">
                             <fieldset>
                                 <!--<label><span class="text-form">Your Name:</span><input name="p1" type="text"/></label>-->
-                                <label><span class="text-form">Ваш Email:</span><input name="p2" type="email"/></label>
+                                <label><span class="text-form">Ваш Email:</span><input name="contactFF" type="email" required/></label> <!--p2-->
                                 <!--<label><span class="text-form">Subject:</span><input name="p3" type="text"/></label>-->
                                 <div class="wrapper">
                                     <div class="text-form">
                                        <!-- <label for="textarea-contacts">-->Что вас интереует?<!--</label>-->
                                     </div>
                                     <div class="extra-wrap">
-                                        <textarea id="textarea-contacts"></textarea>
+                                        <textarea name="messageFF" id="textarea-contacts"></textarea>
                                         <div class="clear"></div>
                                         <div class="buttons">
                                             <!--<a class="button" href="#"
                                                onClick="document.getElementById('contact-form').reset()">Clear form</a>-->
-                                            <a class="button" href="#"
-                                               onClick="document.getElementById('contact-form').submit()">Отправить</a>
+                                            <!--<a class="button" href="#"-->
+                                               <!--onClick="document.getElementById('contact-form').submit()">Отправить</a>-->
+                                            <input type="submit" value="Отправить">
                                         </div>
                                     </div>
                                 </div>
                             </fieldset>
                         </form>
+                        <!--form method="POST" id="feedback-form">
+                            &lt;!&ndash;Как к Вам обращаться:
+                            <input type="text" name="nameFF" required placeholder="фамилия имя отчество" x-autocompletetype="name">&ndash;&gt;
+                            Email для связи:
+                            <input type="email" name="contactFF" required placeholder="адрес электронной почты" x-autocompletetype="email">
+                            Ваше сообщение:
+                            <textarea name="messageFF" required rows="5"></textarea>
+                            <input type="submit" value="отправить">
+                        </form>-->
+                        <script>
+                            document.getElementById('contact-form').addEventListener('submit', function(evt){
+                                var http = new XMLHttpRequest(), f = this;
+                                evt.preventDefault();
+                                http.open("POST", "contacts.php", true);
+                                http.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                                http.send('contactFF=' + f.contactFF.value + '&messageFF=' + f.messageFF.value);
+                                http.onreadystatechange = function() {
+                                    /*if (http.readyState == 4 && http.status == 200) {
+                                        alert(http.responseText + ', Ваше сообщение получено.\nНаши специалисты ответят Вам в течении 2-х дней.\nБлагодарим за интерес к нашей фирме!');
+                                        f.messageFF.removeAttribute('value'); // очистить поле сообщения (две строки)
+                                        f.messageFF.value='';
+                                    }*/
+                                    if (http.readyState == 4 && http.status == 200) {
+                                        alert('Ваше сообщение успешно отправлено. В ближайшее время мы свяжемся с вами.' +
+                                                '\nТакже вы можете связаться с нами позвонив по одному из указанных телефонов:)');
+                                        f.messageFF.removeAttribute('value'); // очистить поле сообщения (две строки)
+                                        f.messageFF.value='';
+                                    }
+                                };
+                                http.onerror = function() {
+                                    alert('Извините, данные не были переданы');
+                                }
+                            }, false);
+                        </script>
                     </article>
                     <article class="grid_4">
                         <h3 class="p2">Наш адрес</h3>

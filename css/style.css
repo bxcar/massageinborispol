@@ -336,10 +336,33 @@ h4.popular-procedures {
     -moz-border-radius: 7px;
     -webkit-border-radius: 7px
 }
+input[type=submit] {
+    display: inline-block !important;
+    width: 145px !important;
+    font-size: 19px !important;
+    line-height: 1.21em !important;
+    font-weight: 400 !important;
+    text-transform: uppercase !important;
+    letter-spacing: -1px !important;
+    padding: 4px 13px 6px !important;
+    color: #fff !important;
+    background: url(../images/button-tail.gif) 0 0 repeat-x #09b4c2  !important;
+    border-radius: 7px  !important;
+    -moz-border-radius: 7px  !important;
+    -webkit-border-radius: 7px  !important
+}
+input[type=submit]:hover {
+    cursor: pointer;
+    background: #171717 !important;
+}
+input[type=submit]:focus {
+    outline: none;
+}
 
 .button:hover {
     background: #171717
 }
+
 
 .list-1 li {
     font-size: 14px;
