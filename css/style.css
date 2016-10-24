@@ -536,6 +536,10 @@ footer {
     color: #fff
 }
 
+.grid_4 .footer-text strong {
+    font-size: 18px;
+}
+
 .support-phone {
     font-weight: 200; /*300*/
     font-size: 20px; /*41*/
