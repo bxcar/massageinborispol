@@ -29,3 +29,13 @@
 	else {
 		echo "unluck";
 	}*/
+//$addr = "awesomegame47@gmail.com";
+//$theme = "theme";
+//$text = "text";
+//if (mail($addr, $theme, $text)) {
+//	echo "&lt;h3&gt;Сообщение отправлено&lt;/h3&gt;";
+//}
+//else {
+//	echo "&lt;h3&gt;При отправке сообщения возникла ошибка&lt;/h3&gt;";
+//}
+
